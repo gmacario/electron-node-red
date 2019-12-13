@@ -3,23 +3,24 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                    checkout scm
-                }
-            }
-        stage('Install') {
-            agent {
-                docker {
-                    image 'node:12.13.1'
-                    reuseNode true
-                }
-            }
-            steps {
-                sh 'npm i'
+                checkout scm
             }
         }
-        stage('Build') {
+        // stage('Install') {
+        //     agent {
+        //         docker {
+        //             image 'node:12.13.1'
+        //             reuseNode true
+        //         }
+        //     }
+        //     steps {
+        //         sh 'npm i'
+        //     }
+        // }
+        stage('Build via electron-builder') {
             agent {
                 dockerfile {
+                    label 'docker && linux'
                     dir 'ci/jenkins'
                     reuseNode true
                 }
