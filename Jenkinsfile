@@ -31,12 +31,9 @@ pipeline {
 
               sh 'yarn'
 
-            //   sh 'yarn dist'
-            //   sh 'ls -la dist/'
+              // sh 'yarn dist'
+              // sh 'ls -la dist/'
 
-              // sh 'npm i -g electron-zip-packager'
-              // sh 'electron-zip-packager app/ "Accessidys" --asar=true --out=..\\dist\\win --platform=win32 --arch=ia32 --icon="styles/images/favicon.ico" --ignore=builder.json --ignore=README.md --overwrite'
-            
               sh 'yarn dist --windows msi:ia32'
               sh 'ls -la dist/'
 
