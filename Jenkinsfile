@@ -27,14 +27,15 @@ pipeline {
             }
             steps {
               sh 'node --version'
-              sh 'yarn --version'
-
-              sh 'yarn'
+              sh 'npm --version'
+              // sh 'yarn --version'
+              // sh 'yarn'
 
               // sh 'yarn dist'
               // sh 'ls -la dist/'
 
-              sh 'yarn dist --windows msi:ia32'
+              // sh 'yarn dist --windows msi:ia32'
+              sh 'npm dist --windows msi:ia32'
               sh 'ls -la dist/'
 
               archiveArtifacts(artifacts: 'dist/*', allowEmptyArchive: true, fingerprint: true)
