@@ -35,7 +35,7 @@ pipeline {
               // sh 'ls -la dist/'
 
               // sh 'yarn dist --windows msi:ia32'
-              sh 'npm dist --windows msi:ia32'
+              sh 'npm run-script dist --windows msi:ia32'
               sh 'ls -la dist/'
 
               archiveArtifacts(artifacts: 'dist/*', allowEmptyArchive: true, fingerprint: true)
