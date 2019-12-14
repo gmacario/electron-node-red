@@ -35,6 +35,8 @@ pipeline {
               // sh 'ls -la dist/'
 
               // sh 'yarn dist --windows msi:ia32'
+              
+              sh 'npm install'
               sh './node_modules/bin/electron-builder --windows msi:ia32'
               sh 'ls -la dist/'
 
