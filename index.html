@@ -13,7 +13,7 @@
         let url;
         let myData = [
             ["Title", "Content"],
-            ["Row1", "Content1"],
+            ["Row1", "Content1, comma"],
             ["Row2", "Hello World"],
             ["Row3", "Bonjour JavaScript"]
         ];
@@ -27,6 +27,22 @@
             createCSV(myData);
         });
 
+        function clean(row) {
+            let rep = "";
+            row.forEach(function(cell, index) {
+                console.log(index, cell);
+                cell = (cell == null) ? "" : cell.toString();
+                if (cell.search(/("|,|\n")/g) >= 0) {
+                    cell = '"' + cell + '"';
+                }
+                if (index > 0) {
+                    rep += ',';
+                }
+                rep += cell;
+            })
+            return rep;
+        }
+
         function createCSV(data) {
             console.log("DEBUG: createCSV(data=", data, ")");
             let holder = "";
@@ -39,7 +55,7 @@
                 type: "text/csv;charset=utf-8;"
             };
             data.forEach(element => {
-                holder += element.join() + "\n";
+                holder += clean(element) + "\n";
             });
             file = new File([holder], filename, properties);
             let link = document.createElement("a");
@@ -50,10 +66,7 @@
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
-
-
             console.log(holder);
-            // TODO
         }
     </script>
 </body>
