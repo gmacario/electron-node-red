@@ -1,27 +1,61 @@
 {
-  "name": "my-first-app",
-  "version": "0.0.1",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "pack": "electron-builder --dir",
-    "dist": "electron-builder",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron ."
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gmacario/electron-node-red.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/gmacario/electron-node-red/issues"
-  },
-  "homepage": "https://github.com/gmacario/electron-node-red#readme",
-  "devDependencies": {
-    "electron": "^7.1.5",
-    "electron-builder": "^22.2.0"
-  }
+    "name": "my-first-app",
+    "version": "0.0.1",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "pack": "electron-builder --dir",
+        "dist": "electron-builder",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "electron ."
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/gmacario/electron-node-red.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/gmacario/electron-node-red/issues"
+    },
+    "homepage": "https://github.com/gmacario/electron-node-red#readme",
+    "devDependencies": {
+        "electron": "^7.1.5",
+        "electron-builder": "^22.2.0"
+    },
+    "build": {
+        "appId": "com.electron.node-red",
+        "productName": "Node-RED Electron",
+        "copyright": "Copyright © 2019 D.Conway-Jones",
+        "mac": {
+            "category": "public.app-category.developer-tools",
+            "target": "dmg"
+        },
+        "linux": {
+            "target": [
+                "rpm",
+                "apk",
+                {
+                    "target": "deb",
+                    "arch": [
+                        "x64",
+                        "armv7l"
+                    ]
+                }
+            ],
+            "synopsis": "Node-RED Low Code development",
+            "category": "Development"
+        },
+        "win": {
+            "target": [
+                {
+                    "target": "msi",
+                    "arch": [
+                        "x64"
+                    ]
+                }
+            ]
+        }
+    }
 }
