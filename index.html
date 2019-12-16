@@ -8,9 +8,14 @@
 </head>
 <body>
     <div class="output"></div>
-    <button>Download CSV</button>
+    <button>Download CSV File</button>
+    <!-- <script type="text/javascript" src="gsheet.js"></script> -->
     <script>
         let url;
+        const feedID = "2PACX-1vRVHGZGt3csaqnRsTHqCX6GK7oJ25tKAZ8gfAPkxTJJdcvCrCZ59oNgXaqGxUJMB2bsg-BTjDV6cvZa";
+        const feed = "https://docs.google.com/spreadsheets/d/e/" + feedID + "/pubhtml";
+        // const url = "https://spreadsheet.google.com/feeds/list/" + feedID + "/1/public/values?alt=json";
+        console.log(feed);
         let myData = [
             ["Title", "Content"],
             ["Row1", "Content1, comma"],
@@ -21,7 +26,7 @@
         const btn = document.querySelector("button");
         btn.style.backgroundColor = "green";
         btn.style.color = "white";
-        btn.style.padding = "5px";
+        btn.style.padding = "15px";
         btn.style.fontSize= "1.5em";
         btn.addEventListener("click", function() {
             createCSV(myData);
@@ -45,8 +50,8 @@
 
         function createCSV(data) {
             console.log("DEBUG: createCSV(data=", data, ")");
-            let holder = "";
             let file;
+            let holder = "";
             if (url !== null) {
                 window.URL.revokeObjectURL(url);
             }
