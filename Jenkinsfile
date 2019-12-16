@@ -37,7 +37,7 @@ pipeline {
               // sh 'yarn dist --windows msi:ia32'
 
               sh 'npm install'
-              sh './node_modules/.bin/electron-builder --windows msi:ia32'
+              sh './node_modules/.bin/electron-builder --windows'
               sh 'ls -la dist/'
 
               archiveArtifacts(artifacts: 'dist/*', allowEmptyArchive: true, fingerprint: true)
