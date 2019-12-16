@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/gmacario/electron-node-red#readme",
   "devDependencies": {
-    "electron": "^7.1.4",
+    "electron": "^7.1.5",
     "electron-builder": "^21.2.0"
   }
 }
