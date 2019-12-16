@@ -14,7 +14,10 @@
         "url": "git+https://github.com/gmacario/electron-node-red.git"
     },
     "keywords": [],
-    "author": "",
+    "author": {
+        "name": "Gianpaolo Macario",
+        "email": "gmacario@gmail.com"
+    },
     "license": "MIT",
     "bugs": {
         "url": "https://github.com/gmacario/electron-node-red/issues"
@@ -25,9 +28,9 @@
         "electron-builder": "^22.2.0"
     },
     "build": {
-        "appId": "com.electron.node-red",
-        "productName": "Node-RED Electron",
-        "copyright": "Copyright © 2019 D.Conway-Jones",
+        "appId": "com.gmacarioe.electron.my-first-app",
+        "productName": "My first Electron App",
+        "copyright": "Copyright © 2019 Gianpaolo Macario",
         "mac": {
             "category": "public.app-category.developer-tools",
             "target": "dmg"
