@@ -31,10 +31,6 @@
         "appId": "com.gmacario.electron.my-first-app",
         "productName": "My first Electron App",
         "copyright": "Copyright © 2019 Gianpaolo Macario",
-        "mac": {
-            "category": "public.app-category.developer-tools",
-            "target": "dmg"
-        },
         "linux": {
             "target": [
                 "rpm",
