@@ -28,7 +28,7 @@
         "electron-builder": "^22.2.0"
     },
     "build": {
-        "appId": "com.gmacarioe.electron.my-first-app",
+        "appId": "com.gmacario.electron.my-first-app",
         "productName": "My first Electron App",
         "copyright": "Copyright © 2019 Gianpaolo Macario",
         "mac": {
