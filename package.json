@@ -33,7 +33,6 @@
         "copyright": "Copyright © 2019 Gianpaolo Macario",
         "linux": {
             "target": [
-                "rpm",
                 "apk",
                 {
                     "target": "deb",
